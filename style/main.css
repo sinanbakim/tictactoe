@@ -1,0 +1,39 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+td {
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid #fff;
+}
+
+#tictactoe {
+    padding-top: 100px;
+}
+
+#ttt-game {
+    position: relative;
+    margin: auto;
+}
+
+#ttt-info {
+    text-align: right;
+    border: 1px solid #fff;
+}
+
+#ttt-options {
+    text-align: left;
+    border: 1px solid #fff;
+}
+
+
+
+.x {
+    background-image: url(../images/x.svg);
+}
+
+.o {
+    background-image: url(../images/o.svg);
+}

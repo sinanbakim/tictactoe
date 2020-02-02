@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>TICTACTOE</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+        <script type="text/javascript" src="script/main.js"></script>
+    </head>
+    <body onload="main();">
+        <div id="tictactoe" class="container">
+            <div class="row">
+                <div id="ttt-info" class="col-sm-3">
+                    
+                </div>
+                <div id="ttt-game" class="col-sm-6">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="ttt-options" class="col-sm-3">
+                    <button id="ttt-start" type="button" class="btn btn-outline-primary">Spiel starten</button><br>
+                    <button id="ttt-pause" type="button" class="btn btn-outline-primary">Spiel pausieren</button><br>
+                    <button id="ttt-stop" type="button" class="btn btn-outline-primary">Spiel beenden</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
