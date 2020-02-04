@@ -1,8 +1,19 @@
+class FizzyText {
+    constructor() {
+        this.message = 'dat.gui';
+        this.speed = 0.8;
+        this.displayOutline = false;
+        this.explode = function () { };
+        // Define render logic ...
+    }
+}
+
 var d1, d2, d3, d4, d5, d6, d7, d8, d9;
 var intervalHandler;
 var clockTicking = false;
 var timer = 0;
 var curPlayer = 1;
+
 
 function resizeGrid() {
     var l = $("#ttt-game")[0].offsetWidth / 3;
@@ -24,6 +35,7 @@ function events() {
             clockTicking = true;
             timer = 120;
             intervalHandler = window.setInterval(idle, 1000);
+            $("#ttt-game").removeClass("hide");
             $("#ttt-start").html("Spiel pausieren");
             showClock();
         }
@@ -95,15 +107,24 @@ function checkTriple() {
         return 0;
 }
 
+function showGUI() {
+    var text = new FizzyText();
+    var gui = new dat.GUI();
+    gui.add(text, 'message');
+    gui.add(text, 'speed', -5, 5);
+    gui.add(text, 'displayOutline');
+    gui.add(text, 'explode');
+}
+
 function showClock() {
     $("#ttt-info").html(timer);
 }
 
 function selectPrompt(i) {
     switch(i) {
-        case 0: alert("Spiel vorbei!"); break;
-        case 1: alert("Spieler 1 gewinnt!"); break;
-        case 2: alert("Spieler 2 gewinnt!"); break;
+        case 0: $("#ttt-info").html("Spiel vorbei!"); break;
+        case 1: $("#ttt-info").html("Spieler 1 gewinnt!"); break;
+        case 2: $("#ttt-info").html("Spieler 2 gewinnt!"); break;
     }
     
 }
@@ -121,15 +142,22 @@ function countdown() {
 
 function idle() {
     countdown();
-    if(checkTriple() == 0 && timer == 0)
+    if(checkTriple() == 0 && timer == 0) {
+        window.clearInterval(intervalHandler);
         selectPrompt(0);
-    if(checkTriple() == 1)
+    }
+    if(checkTriple() == 1) {
+        window.clearInterval(intervalHandler);
         selectPrompt(1);
-    if(checkTriple() == 2)
+    }
+    if(checkTriple() == 2) {
+        window.clearInterval(intervalHandler);
         selectPrompt(2);
+    }
 }
 
 function init() {
+    showGUI();
     resizeGrid();
     events();
 }

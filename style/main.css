@@ -28,7 +28,13 @@ td {
     border: 1px solid #fff;
 }
 
+.hide {
+    visibility: hidden;
+}
 
+.show {
+    visibility: visible;
+}
 
 .x {
     background-image: url(../images/x.svg);
