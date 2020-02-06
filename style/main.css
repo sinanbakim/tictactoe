@@ -3,10 +3,22 @@ body {
     color: #fff;
 }
 
+button {
+    width: 200px;
+}
+
+p {
+    font-size: xx-large;
+}
+
 td {
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid #fff;
+}
+
+table {
+    
 }
 
 #tictactoe {
@@ -16,6 +28,8 @@ td {
 #ttt-game {
     position: relative;
     margin: auto;
+    border: 1px solid #fff;
+    border-collapse: unset;
 }
 
 #ttt-info {
@@ -26,6 +40,13 @@ td {
 #ttt-options {
     text-align: left;
     border: 1px solid #fff;
+}
+
+.center {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .hide {
